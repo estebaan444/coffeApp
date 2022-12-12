@@ -1,13 +1,16 @@
-package com.estebi.coffeapp.ui.gallery
+package com.estebi.coffeapp.ui.DemanarPlats
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.R
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.estebi.coffeapp.databinding.FragmentDemanarPlatsBinding
 
-class GalleryViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Demanar plats"
-    }
-    val text: LiveData<String> = _text
+class DemanarPlatsViewModel : ViewModel() {
+
 }

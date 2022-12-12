@@ -1,41 +1,45 @@
-package com.estebi.coffeapp.ui.gallery
+package com.estebi.coffeapp.ui.DemanarPlats
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.estebi.coffeapp.databinding.FragmentGalleryBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.estebi.coffeapp.adapters.Caffe
+import com.estebi.coffeapp.adapters.CaffeAdapter
+import com.estebi.coffeapp.adapters.CaffeProvider
 
-class GalleryFragment : Fragment() {
+import com.estebi.coffeapp.databinding.FragmentDemanarPlatsBinding
+import com.estebi.coffeapp.shared_VM.Shared_VM.Companion.listOfCaffes
 
-private var _binding: FragmentGalleryBinding? = null
-  // This property is only valid between onCreateView and
-  // onDestroyView.
-  private val binding get() = _binding!!
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View {
-    val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+class DemanarPlatsFragment : Fragment() {
 
-    _binding = FragmentGalleryBinding.inflate(inflater, container, false)
-    val root: View = binding.root
+    private lateinit var binding: FragmentDemanarPlatsBinding
 
-    val textView: TextView = binding.textGallery
-    galleryViewModel.text.observe(viewLifecycleOwner) {
-      textView.text = it
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentDemanarPlatsBinding.inflate(inflater, container, false)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+        val root: View = binding.root
+
+        binding.recyclerView.adapter =
+            CaffeAdapter(CaffeProvider.caffeList) {caffe ->
+                onItemSelected(
+                    caffe
+                )
+            }
+        return root
     }
-    return root
-  }
 
-override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    fun onItemSelected(caffe: Caffe){
+        Toast.makeText(requireContext(), caffe.caffe, Toast.LENGTH_SHORT).show()
+        listOfCaffes.toMutableList().add(caffe.caffe)
     }
 }

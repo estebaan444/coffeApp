@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         startTimer()
     }
-    fun startTimer(){
+    private fun startTimer(){
         object: CountDownTimer(3000, 1000) {
             override fun onTick(p0: Long) {
             }

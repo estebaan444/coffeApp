@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.estebi.coffeapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.estebi.coffeapp.ui.DemanarPlats.DemanarPlatsFragment"
+        android:label="@string/menu_demanarPlats"
+        tools:layout="@layout/fragment_demanar_plats" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.estebi.coffeapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.estebi.coffeapp.ui.PagarComanda.PagarComandaFragment"
+        android:label="@string/menu_pagarComanda"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
