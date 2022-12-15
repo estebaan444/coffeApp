@@ -12,8 +12,10 @@ class CaffeViewHolder(view:View):RecyclerView.ViewHolder(view){
 
 
     fun render(caffeModel: Caffe, onClickListener: (Caffe)->Unit){
+        caffeModel.preu
         binding.caffeTitle.text = caffeModel.caffe
         binding.caffeDesc.text = caffeModel.desc
+        binding.caffePreu.text = caffeModel.preu.toString()
         Glide.with(binding.imgCoffe.context).load(caffeModel.photo).into(binding.imgCoffe)
 
         itemView.setOnClickListener { onClickListener(caffeModel) }

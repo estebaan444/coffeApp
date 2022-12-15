@@ -7,10 +7,10 @@
     tools:context=".ui.home.HomeFragment">
 
     <Button
-        android:id="@+id/PantallaInicial"
+        android:id="@+id/PantallaInicialBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/PantallaInicialButton"
+        android:text="Llista de caffes!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,6 +14,7 @@ import com.estebi.coffeapp.adapters.CaffeProvider
 
 import com.estebi.coffeapp.databinding.FragmentDemanarPlatsBinding
 import com.estebi.coffeapp.shared_VM.Shared_VM.Companion.listOfCaffes
+import com.estebi.coffeapp.shared_VM.Shared_VM.Companion.listOfPrices
 
 
 class DemanarPlatsFragment : Fragment() {
@@ -40,6 +41,7 @@ class DemanarPlatsFragment : Fragment() {
 
     fun onItemSelected(caffe: Caffe){
         Toast.makeText(requireContext(), caffe.caffe, Toast.LENGTH_SHORT).show()
-        listOfCaffes.toMutableList().add(caffe.caffe)
+        listOfCaffes.add(caffe.caffe)
+        listOfPrices.add(caffe.preu)
     }
 }
