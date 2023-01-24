@@ -16,10 +16,10 @@ import com.estebi.coffeapp.databinding.FragmentDemanarPlatsBinding
 import com.estebi.coffeapp.shared_VM.Shared_VM.Companion.listOfCaffes
 import com.estebi.coffeapp.shared_VM.Shared_VM.Companion.listOfPrices
 
-
 class DemanarPlatsFragment : Fragment() {
 
     private lateinit var binding: FragmentDemanarPlatsBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +39,7 @@ class DemanarPlatsFragment : Fragment() {
         return root
     }
 
-    fun onItemSelected(caffe: Caffe){
+    fun onItemSelected(caffe: Caffe, ) {
         Toast.makeText(requireContext(), caffe.caffe, Toast.LENGTH_SHORT).show()
         listOfCaffes.add(caffe.caffe)
         listOfPrices.add(caffe.preu)

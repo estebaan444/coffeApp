@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                val intent = Intent(applicationContext, RegistActivity::class.java).apply {}
+                val intent = Intent(applicationContext, init::class.java).apply {}
                 startActivity(intent)
             }
         }.start()
